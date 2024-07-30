@@ -2,9 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using POO_Interfaces.Interfaces;
 
 namespace POO_Interfaces.Models;
-public class Leon : Animal
+
+//Se puede heredar tanto de una clase como de una interfaz
+public class Leon : Animal, IAnimal
 {
     public bool Melena { get; set; }
 
@@ -13,9 +16,28 @@ public class Leon : Animal
         this.Melena = Melena;
     }
 
-    //Clase abstracta que viene del padre, se usa la palabra clave Override
+    //Primero se implementan los métodos de la interfaz y después los métodos que queramos
+    public void Comer()
+    {
+    }
+
+    public void Dormir()
+    {
+    }
+
+    public void Desplazar()
+    {
+    }
+
+    //Método abstracto que viene de la clase animal (Se usa override para utilizarlo)
     public override void Respirar()
     {
-        Console.WriteLine($"{Nombre} está respirando lentamente.");
     }
+
+
+    //Clase abstracta que viene del padre, se usa la palabra clave Override
+    // public override void Respirar()
+    // {
+    //     Console.WriteLine($"{Nombre} está respirando lentamente.");
+    // }
 }
