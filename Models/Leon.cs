@@ -8,8 +8,14 @@ public class Leon : Animal
 {
     public bool Melena { get; set; }
 
-    public Leon(bool melena, string nombre, double pesoKG) : base(nombre, pesoKG)
+    public Leon(string nombre, double pesoKG, bool melena) : base(nombre, pesoKG)
     {
         this.Melena = Melena;
+    }
+
+    //Clase abstracta que viene del padre, se usa la palabra clave Override
+    public override void Respirar()
+    {
+        Console.WriteLine($"{Nombre} está respirando lentamente.");
     }
 }
